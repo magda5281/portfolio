@@ -14,6 +14,10 @@ export default {
         sans: ['var(--font-sans)', ...fontFamily.sans],
         serif: ['var(--font-serif)', ...fontFamily.serif]
       },
+      container: {
+        center: true, // Centers the container
+        padding: '1rem' // Adds default padding
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
