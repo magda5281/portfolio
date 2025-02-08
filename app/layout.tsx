@@ -1,11 +1,19 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Providers from '@/components/providers'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
+import { cn } from '@/lib/utils'
 
 const inter = Inter({
-  variable: '--font-geist-sans',
+  variable: '--font-sans',
   subsets: ['latin']
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-serif'
 })
 
 export const metadata: Metadata = {
@@ -20,8 +28,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`}>
-        <Providers>{children}</Providers>
+      <body
+        className={cn(
+          inter.variable,
+          playfair.variable,
+          'flex min-h-screen flex-col font-sans antialiased'
+        )}
+      >
+        <Providers>
+          <Header />
+          <main className='grow'>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   )
