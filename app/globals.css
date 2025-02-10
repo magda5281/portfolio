@@ -79,7 +79,7 @@ body {
     @apply rounded-lg px-1 py-0.5;
   }
   .prose pre code {
-    @apply line-height: 1.75 py-0;
+    @apply py-0 leading-relaxed;
   }
 
   .prose code span {
