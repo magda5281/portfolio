@@ -7,6 +7,15 @@ import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { formatDate } from '@/lib/utils'
 
+//you can amend the tailwind/typography styles in MDXRemote
+const components = {
+  h2: (props: any) => (
+    <h2 {...props} className='py-4 font-bold text-red-400'>
+      {props.children}
+    </h2>
+  )
+}
+
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = params
 
@@ -48,7 +57,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           </p>
         </header>
         <main className='prose dark:prose-invert mt-16'>
-          <MDXRemote source={content} />
+          <MDXRemote source={content} components={components} />
         </main>
       </div>
     </section>
