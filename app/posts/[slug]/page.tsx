@@ -4,20 +4,11 @@ import { notFound } from 'next/navigation'
 import { ArrowLeftIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { MDXRemote } from 'next-mdx-remote/rsc'
 import { formatDate } from '@/lib/utils'
-
-//you can amend the tailwind/typography styles in MDXRemote
-const components = {
-  h2: (props: any) => (
-    <h2 {...props} className='py-4 font-bold text-red-400'>
-      {props.children}
-    </h2>
-  )
-}
+import MDXContent from '@/components/mdx-content'
 
 export default async function Post({ params }: { params: { slug: string } }) {
-  const { slug } = params
+  const { slug } = await params
 
   const post = await getPostBySlug(slug)
 
@@ -56,9 +47,9 @@ export default async function Post({ params }: { params: { slug: string } }) {
             {author}/ {formatDate(publishedAt ?? '')}
           </p>
         </header>
-        <main className='prose dark:prose-invert mt-16'>
-          <MDXRemote source={content} components={components} />
-        </main>
+        <article className='prose dark:prose-invert mt-16'>
+          <MDXContent source={content} />
+        </article>
       </div>
     </section>
   )
