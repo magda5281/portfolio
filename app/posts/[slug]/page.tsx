@@ -1,5 +1,5 @@
 import React from 'react'
-import { getPostBySlug } from '@/lib/posts'
+import { getPostBySlug, getPosts } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import { ArrowLeftIcon } from 'lucide-react'
 import Link from 'next/link'
@@ -7,6 +7,11 @@ import Image from 'next/image'
 import { formatDate } from '@/lib/utils'
 import MDXContent from '@/components/mdx-content'
 
+export async function generateStaticParams() {
+  const posts = await getPosts()
+  const slugs = posts.map(post => ({ slug: post.slug }))
+  return slugs
+}
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = await params
 
@@ -47,7 +52,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             {author}/ {formatDate(publishedAt ?? '')}
           </p>
         </header>
-        <article className='prose dark:prose-invert mt-16'>
+        <article className='prose mt-16 dark:prose-invert'>
           <MDXContent source={content} />
         </article>
       </div>
