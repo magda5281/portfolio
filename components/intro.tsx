@@ -19,7 +19,6 @@ export default function Intro() {
           width={175}
           height={175}
           className='flex-1 rounded-lg object-cover grayscale'
-          layout='intrinsic'
           priority
         />
       </div>
