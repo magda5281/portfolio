@@ -88,7 +88,7 @@ body {
     @apply rounded-lg px-1 py-0.5 font-mono;
   }
   .prose pre code {
-    @apply py-0 leading-relaxed;
+    @apply py-0 leading-3;
   }
 
   .prose code span {
