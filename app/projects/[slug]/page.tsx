@@ -7,11 +7,11 @@ import Image from 'next/image'
 import { formatDate } from '@/lib/utils'
 import MDXContent from '@/components/mdx-content'
 
-// export async function generateStaticParams() {
-//   const posts = await getPosts()
-//   const slugs = posts.map(post => ({ slug: post.slug }))
-//   return slugs
-// }
+export async function generateStaticParams() {
+  const projects = await getProjects()
+  const slugs = projects.map(project => ({ slug: project.slug }))
+  return slugs
+}
 export default async function Project({
   params
 }: {
@@ -27,7 +27,7 @@ export default async function Project({
 
   const { metadata, content } = project
 
-  const { title, image, author, publishedAt, link } = metadata
+  const { title, image, author, publishedAt } = metadata
   return (
     <section className='pb-24 pt-32'>
       <div className='container max-w-3xl'>
