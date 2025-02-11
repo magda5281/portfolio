@@ -11,7 +11,7 @@ export default async function RecentPosts() {
         <h2 className='title mb-12'>Recent posts</h2>
         <Posts posts={posts} />
         <Link href='/posts' className='mt-8 inline-flex items-center'>
-          <span>All posts</span>
+          <span className='text-blue-400 hover:text-blue-500'>All posts</span>
         </Link>
       </div>
     </section>
