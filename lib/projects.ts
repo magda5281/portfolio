@@ -16,9 +16,21 @@ export type ProjectMetadata = {
   publishedAt?: string
   slug: string
 }
+
+export async function getProjectBySlug(slug: string): Promise<Project | null> {
+  try {
+    const filePath = path.join(rootDirectory, `${slug}`)
+
+    const fileContents = fs.readFileSync(filePath, { encoding: 'utf8' })
+
+    const { data, content } = matter(fileContents)
+    return { metadata: { ...data, slug }, content }
+  } catch (error) {
+    return null
+  }
+}
 export async function getProjects(limit?: number): Promise<ProjectMetadata[]> {
   const files = fs.readdirSync(rootDirectory)
-
   const projects = files
     .map(file => getProjectsMetadata(file))
     .sort((a, b) => {
@@ -31,7 +43,6 @@ export async function getProjects(limit?: number): Promise<ProjectMetadata[]> {
   if (limit) {
     return projects.slice(0, limit)
   }
-  console.log('projects', projects)
   return projects
 }
 

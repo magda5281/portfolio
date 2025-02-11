@@ -2,6 +2,7 @@ import { JSX } from 'react'
 import { highlight } from 'sugar-high'
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc'
 import Counter from '@/components/counter'
+import ProjectLink from '@/components/projectLink'
 
 function Code({ children, ...props }: any) {
   let codeHTML = highlight(children as string)

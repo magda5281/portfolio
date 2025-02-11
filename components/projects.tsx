@@ -1,5 +1,6 @@
 import { ProjectMetadata } from '@/lib/projects'
 import { formatDate } from '@/lib/utils'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -9,24 +10,32 @@ export default function Projects({
   projects: ProjectMetadata[]
 }) {
   return (
-    <ul className='flex flex-col gap-8'>
+    <ul className='grid grid-cols-1 gap-8 sm:grid-cols-2'>
       {projects.map(project => (
-        <li key={project.slug}>
-          <Link
-            href={`/projects/${project.slug}.mdx`}
-            className='gap-x4 flex justify-between gap-y-1'
-          >
-            <div className='max-w-lg'>
-              <p className='semibold text-lg'>{project.title}</p>
-              <p className='mt-1 line-clamp-2 text-sm font-light text-muted-foreground'>
-                {project.summary}
-              </p>
+        <li key={project.slug} className='group relative'>
+          <Link href={`/projects/${project.slug}.mdx`}>
+            <div className='h-72 w-full overflow-hidden bg-muted sm:h-60'>
+              <Image
+                src={project?.image || ''}
+                alt={project.title || ''}
+                fill
+                className='hover: rounded-lg object-cover object-center shadow-lg transition-transform duration-300 ease-in-out'
+              />
             </div>
-            {project.publishedAt && (
-              <p className='mt-1 text-sm font-light'>
-                {formatDate(project.publishedAt)}
-              </p>
-            )}
+
+            <div className='absolute inset-[4px] rounded-lg bg-background/70 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-70'>
+              <div className='absolute inset-x-0 bottom-0 translate-y-2 px-6 py-4'>
+                <h2 className='title line-clamp-1 text-xl no-underline'>
+                  {project.title}
+                </h2>
+                <p className='line-clamp-1 text-sm text-muted-foreground'>
+                  {project.summary}
+                </p>
+                <p className='text-xs font-light text-muted-foreground'>
+                  {formatDate(project.publishedAt ?? '')}
+                </p>
+              </div>
+            </div>
           </Link>
         </li>
       ))}
