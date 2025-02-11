@@ -94,4 +94,7 @@ body {
   .prose code span {
     @apply font-medium;
   }
+  .prose a {
+    @apply text-blue-600 underline transition-colors duration-200 hover:text-blue-700;
+  }
 }
