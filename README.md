@@ -3,6 +3,9 @@
 Welcome to my Portfolio App, a personal project showcasing my work, skills, and
 projects.
 
+🔗 **<a href="https://portfolio-8cyp.vercel.app/" target="_blank">Live
+Demo</a>**
+
 ## 📌 Features
 
 🖥 Responsive UI with Tailwind CSS
@@ -96,10 +99,6 @@ To add a new post, create a .mdx file inside the relevant content directory.
 Update the socialLinks array in components/Footer.tsx.
 
 ## ⚡ Deployment
-
-### 🚀 Live Demo
-
-This project is deployed on Vercel: Live Portfolio
 
 ### 🚀 Deploy to Vercel
 
