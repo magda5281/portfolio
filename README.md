@@ -1,51 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with
-[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🚀 Portfolio App
 
-## Getting Started
+Welcome to your Portfolio App, a personal project showcasing your work, skills,
+and projects. This README provides details on how to set up, run, and customize
+your application.
 
-First, run the development server:
+📌 Features
 
-```bash
+🖥 Responsive UI with Tailwind CSS
+
+📩 Newsletter Subscription Form (React Hook Form + Zod validation)
+
+📞 Contact Form (Similar to Newsletter Form)
+
+🌙 Dark Mode Support
+
+⚡ Fast Performance with Next.js
+
+📄 Projects Showcase
+
+🔗 Social Media Links
+
+🎨 Typography Enhancements with @tailwindcss/typography
+
+📝 Content Management with MDX
+
+🛠 Tech Stack
+
+Framework: Next.js
+
+Styling: Tailwind CSS + @tailwindcss/typography
+
+Form Handling: React Hook Form + Zod
+
+UI Components: ShadCN Components
+
+Notifications: Sonner
+
+Content: MDX for Posts & Projects
+
+🚀 Getting Started
+
+1️⃣ Clone the Repository
+
+git clone https://github.com/yourusername/portfolio.git cd portfolio
+
+2️⃣ Install Dependencies
+
+npm install
+
+# or
+
+yarn install
+
+3️⃣ Start the Development Server
+
 npm run dev
+
 # or
+
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page
-auto-updates as you edit the file.
+📝 Usage Guide
 
-This project uses
-[`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
-to automatically optimize and load [Geist](https://vercel.com/font), a new font
-family for Vercel.
+📬 Handling Form Submission
 
-## Learn More
+The subscription form uses react-hook-form and zod for validation.
 
-To learn more about Next.js, take a look at the following resources:
+The contact form follows the same structure as the newsletter form.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To modify validation rules, update ContactFormSchema inside lib/schemas.ts.
 
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js) - your
-feedback and contributions are welcome!
+🎨 Customizing Theme
 
-## Deploy on Vercel
+Tailwind CSS handles the styling.
 
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+Modify global styles in styles/global.css.
 
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)
-for more details.
+📖 Managing Posts & Projects with MDX
 
-Next.js app using Typescript, eslint , tailwindcss,
+All blog posts and projects are written in MDX format.
+
+To add a new post, create a .mdx file inside the relevant content directory.
+
+🔗 Adding Social Links
+
+Update the socialLinks array in components/Footer.tsx.
+
+⚡ Deployment
+
+🚀 Live Demo
+
+This project is deployed on Vercel: Live Portfolio
+
+🚀 Deploy to Vercel
+
+Push your project to GitHub.
+
+Connect the repository to Vercel.
+
+Deploy with:
+
+vercel
+
+🤝 Contributing
+
+Fork the repository
+
+Create a new branch (git checkout -b feature-name)
+
+Commit changes (git commit -m "Add new feature")
+
+Push to GitHub (git push origin feature-name)
+
+Open a Pull Request 🎉
+
+📄 License
+
+This project is MIT Licensed.
+
+✨ Made with ❤️ by [Your Name]
