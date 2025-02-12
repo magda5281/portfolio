@@ -46,6 +46,7 @@ export default async function Project({
               alt={title || ''}
               className='object-cover'
               fill
+              priority
             />
           </div>
         )}
