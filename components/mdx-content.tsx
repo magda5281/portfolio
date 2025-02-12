@@ -1,10 +1,13 @@
-import { JSX } from 'react'
+import type { JSX } from 'react'
 import { highlight } from 'sugar-high'
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc'
 import Counter from '@/components/counter'
 
-function Code({ children, ...props }: any) {
-  let codeHTML = highlight(children as string)
+interface CodeProps extends React.HTMLProps<HTMLPreElement> {
+  children: string
+}
+function Code({ children, ...props }: CodeProps) {
+  const codeHTML = highlight(children as string)
 
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
