@@ -9,10 +9,10 @@ import { ContactFormSchema } from '@/lib/schemas'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
+import { sendEmail } from '@/lib/actions'
 
 type Inputs = z.infer<typeof ContactFormSchema>
 export default function ContactForm() {
-  console.log('useForm:', useForm)
   const {
     register,
     handleSubmit,
@@ -28,7 +28,13 @@ export default function ContactForm() {
   })
 
   const processForm: SubmitHandler<Inputs> = async data => {
+    const result = await sendEmail(data)
+
+    if (result?.error) {
+      toast.error('An error occurred! Please try again.')
+    }
     toast.success('Message sent successfully!')
+    reset()
   }
 
   return (
@@ -56,7 +62,6 @@ export default function ContactForm() {
           className='overflow-visible fill-zinc-50 dark:fill-zinc-900/75'
         ></svg>
       </svg>
-
       {/* Form */}
       <div className='relative'>
         <form
@@ -96,7 +101,6 @@ export default function ContactForm() {
               )}
             </div>
             {/* message */}
-
             <div className='sm:col-span-2'>
               <Textarea
                 rows={4}
@@ -111,7 +115,6 @@ export default function ContactForm() {
               )}
             </div>
           </div>
-
           <div className='mt-6'>
             <Button
               type='submit'
@@ -121,7 +124,6 @@ export default function ContactForm() {
               {isSubmitting ? 'Submitting...' : 'Contact Us'}
             </Button>
           </div>
-
           <p className='mt-4 text-xs text-muted-foreground'>
             By submitting this form, I agree to the{' '}
             <Link href='/privacy' className='font-bold'>
