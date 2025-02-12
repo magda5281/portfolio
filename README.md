@@ -1,8 +1,7 @@
 # 🚀 Portfolio App
 
-Welcome to your Portfolio App, a personal project showcasing your work, skills,
-and projects. This README provides details on how to set up, run, and customize
-your application.
+Welcome to my Portfolio App, a personal project showcasing my work, skills, and
+projects.
 
 ## 📌 Features
 
@@ -78,7 +77,7 @@ The subscription form uses react-hook-form and zod for validation.
 
 The contact form follows the same structure as the newsletter form.
 
-To modify validation rules, update ContactFormSchema inside lib/schemas.ts.
+To modify validation rules, update schemas inside lib/schemas.ts.
 
 ### 🎨 Customizing Theme
 
