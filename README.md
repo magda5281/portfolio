@@ -49,7 +49,7 @@ git clone https://github.com/yourusername/portfolio.git cd portfolio
 npm install
 ```
 
-# or
+or
 
 ```
 yarn install
@@ -61,7 +61,7 @@ yarn install
 npm run dev
 ```
 
-# or
+or
 
 ```
 yarn dev
