@@ -21,7 +21,7 @@ projects.
 
 🎨 Typography Enhancements with @tailwindcss/typography
 
-📝 Content Management with MDX
+📝 Content Management with MDX and gray-matter package
 
 ## 🛠 Tech Stack
 

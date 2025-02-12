@@ -26,6 +26,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
     const { data, content } = matter(fileContents)
     return { metadata: { ...data, slug }, content }
   } catch (error) {
+    console.log(error)
     return null
   }
 }

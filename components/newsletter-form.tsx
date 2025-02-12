@@ -8,8 +8,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { NewsletterFormSchema } from '@/lib/schemas'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
-import { Textarea } from './ui/textarea'
-import { sendEmail } from '@/lib/actions'
 
 import { subscribe } from '@/lib/actions'
 import { Card, CardContent } from '@/components/ui/card'
