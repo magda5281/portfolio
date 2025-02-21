@@ -1,6 +1,6 @@
 # 🚀 Portfolio App
 
-Welcome to my Portfolio App, a personal project showcasing my work, skills, and
+Welcome to my next.js Portfolio App, a personal project showcasing my work, skills, and
 projects.
 
 🔗 **<a href="https://portfolio-8cyp.vercel.app/" target="_blank">Live
@@ -28,7 +28,9 @@ Demo</a>**
 
 ## 🛠 Tech Stack
 
-**Framework**: Next.js
+**Framework**: Next.js, Typescript 
+
+**Language**: JavaScript, TypeScript
 
 **Styling**: Tailwind CSS + @tailwindcss/typography
 
