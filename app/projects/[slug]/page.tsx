@@ -27,7 +27,7 @@ export default async function Project({
 
   const { metadata, content } = project
 
-  const { title, image, author, publishedAt } = metadata
+  const { title, image, href, author, publishedAt } = metadata
   return (
     <section className='pb-24 pt-32'>
       <div className='container max-w-3xl'>
@@ -53,7 +53,7 @@ export default async function Project({
 
         <header>
           <Link
-            href='https://best-shop-resposive.vercel.app'
+            href={href ? href : ''}
             target='_blank'
             rel='noopener noreferrer'
           >

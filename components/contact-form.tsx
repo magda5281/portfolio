@@ -12,7 +12,7 @@ import { Textarea } from './ui/textarea'
 import { sendEmail } from '@/lib/actions'
 
 type Inputs = z.infer<typeof ContactFormSchema>
-export default function ContactForm() {
+export default function ContactForm(): React.JSX.Element {
   const {
     register,
     handleSubmit,
