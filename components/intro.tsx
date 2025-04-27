@@ -4,7 +4,7 @@ import authorImage from '@/public/images/authors/magda.png'
 
 export default function Intro() {
   return (
-    <section className='flex flex-col-reverse items-center gap-x-10 gap-y-4 pb-4 md:flex-row'>
+    <section className='flex flex-col-reverse items-center gap-x-10 gap-y-4 pb-4 pt-4 md:flex-row'>
       <div className='mt-2 flex-1 md:mt-0'>
         <h1 className='title no-underline'>Hey, I&#39;m Magda.</h1>
         <p className='mt-3 font-light text-muted-foreground'>
