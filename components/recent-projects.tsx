@@ -11,7 +11,7 @@ export default async function RecentProjects() {
         <h2 className='title mb-12'>Recent projects</h2>
         <Projects projects={projects} />
         <Link href='/projects' className='mt-8 inline-flex items-center'>
-          <span className='text-blue-500 hover:text-blue-600'>
+          <span className='text-blue-600 hover:text-blue-700'>
             All projects
           </span>
         </Link>
