@@ -22,7 +22,7 @@ export default function NotFound() {
               <div className='sm:border-1 mt-10 flex space-x-3 sm:border-transparent'>
                 <Link
                   href='/'
-                  className='mt-10 inline-flex items-center gap-3 text-blue-400 text-muted-foreground hover:text-blue-500'
+                  className='mt-10 inline-flex items-center gap-3 text-blue-500 text-muted-foreground hover:text-blue-600'
                 >
                   <ArrowLeftIcon className='h-5 w-5' />
                   <span>Go back home</span>
