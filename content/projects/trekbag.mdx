@@ -1,0 +1,68 @@
+---
+title: 'Trekbag'
+summary:
+  'A modern React & Vite app to manage your packing list—built with advanced
+  React patterns and optimized with Zustand for global state and persistence.'
+image: '/images/projects/trekbag.webp'
+href: 'https://trekbag-seven.vercel.app/'
+author: 'Magda Gozdalik'
+publishedAt: '2025-03-18'
+---
+
+# TREKBAG
+
+> A modern React & Vite app to manage your packing list—built with advanced
+> React patterns and optimized with Zustand for global state and persistence.
+
+## Demo
+
+🔗 **<a href="https://trekbag-seven.vercel.app" target="_blank">TREKBAG</a>**
+
+## Features
+
+- **Add & Remove Items**  
+  Add new items via a controlled form and delete or toggle them individually.
+- **Checkbox List**  
+  Manage “packed” state with `useState` and map over your items array.
+- **Sorting UI**  
+  Use [react-select](https://react-select.com) to sort by status.
+- **LocalStorage Persistence**  
+  Automatically persist your list between sessions using Zustand’s built-in
+  persist middleware.
+- **Separation of Concerns**  
+  Component logic lives in custom hooks or the store, while presentation stays
+  in dumb UI components.
+- **Memoization & Performance**  
+  Derive filtered and sorted lists with `useMemo`; avoid unnecessary re-renders
+  with zustand selectors.
+- **Children Composition**  
+   Flexible layout via `children` props, evolving from prop-drilling to context
+  and finally to Zustand.
+
+  ⚠️ **Styling & Responsiveness**  
+  Styling was not a priority for this project, so the UI isn’t fully responsive.
+
+## Evolution
+
+1. **Prop Drilling**  
+   All state and update handlers lived in `App.jsx` and were passed down through
+   multiple layers. Functional components with props & `children` composition
+   were used originally
+2. **Context API + Custom Hook**  
+   Introduced an `ItemsContextProvider` and `useItemsContext` to avoid
+   prop-drilling, with manual localStorage sync.
+3. **Zustand Store**  
+   Replaced Context entirely with a lightweight Zustand store (`itemsStore.js`)
+   using its `persist` middleware to handle localStorage automatically.
+   > The old `contexts/` folder and `lib/hooks.js` remain in the repo for
+   > reference only.
+
+## Tech Stack
+
+- **App Framework**: [Vite](https://vitejs.dev/) + [React](https://reactjs.org/)
+- **State Management**:
+  [Zustand](https://zustand.docs.pmnd.rs/getting-started/introduction) (with
+  `persist`)
+- **UI**: Functional components with props & `children` composition
+- **Sorting**: [react-select](https://react-select.com)
+- **Deployment**: Vercel
