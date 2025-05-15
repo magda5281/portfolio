@@ -14,7 +14,7 @@ export default function Projects({
       {projects.map(project => (
         <li key={project.slug} className='group relative'>
           <Link href={`/projects/${project.slug}.mdx`}>
-            <div className='h-72 w-full overflow-hidden bg-muted sm:h-60'>
+            <div className='h-72 w-full overflow-hidden rounded-lg bg-muted sm:h-60'>
               <Image
                 src={project?.image || ''}
                 alt={project.title || ''}
