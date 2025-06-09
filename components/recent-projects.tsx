@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Projects from '@/components/projects'
 
 export default async function RecentProjects() {
-  const projects = await getProjects(4)
+  const projects = await getProjects(6)
   return (
     <section className='pb-24'>
       <div>
