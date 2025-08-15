@@ -18,16 +18,16 @@ export default function ThemeToggle() {
   }
   return (
     <Button
-      size={'sm'}
       variant={'ghost'}
+      className='group hover:bg-transparent'
       onClick={() => {
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
       }}
     >
       {resolvedTheme === 'dark' ? (
-        <SunIcon className='size-4 text-orange-300' />
+        <SunIcon className='size-4 overflow-visible text-orange-300 group-hover:drop-shadow-[0_0_8px_currentColor] md:size-6' />
       ) : (
-        <MoonIcon className='size-4 text-sky-950' />
+        <MoonIcon className='size-4 overflow-visible text-sky-950 group-hover:drop-shadow-[0_0_8px_rgba(0,0,0,0.95)] md:size-6' />
       )}
       <span className='sr-only'>Toggle theme</span>
     </Button>

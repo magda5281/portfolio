@@ -78,6 +78,7 @@ export default function ContactForm(): React.JSX.Element {
                 placeholder='Name'
                 autoComplete='given-name'
                 {...register('name')}
+                className='shadow-lg'
               />
               {errors.name?.message && (
                 <p className='ml-1 mt-2 text-sm text-rose-400'>
@@ -93,6 +94,7 @@ export default function ContactForm(): React.JSX.Element {
                 placeholder='email'
                 autoComplete='email'
                 {...register('email')}
+                className='shadow-lg'
               />
               {errors.email?.message && (
                 <p className='ml-1 mt-2 text-sm text-rose-400'>
@@ -106,6 +108,7 @@ export default function ContactForm(): React.JSX.Element {
                 rows={4}
                 placeholder='Message'
                 {...register('message')}
+                className='shadow-lg'
               />
 
               {errors.message?.message && (

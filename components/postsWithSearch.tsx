@@ -24,7 +24,7 @@ export default function PostsWithSearch({ posts }: { posts: PostMetadata[] }) {
         <Input
           type='text'
           placeholder='Search posts...'
-          className='h-9 w-full sm:w-1/2'
+          className='h-9 w-full shadow-lg sm:w-1/2'
           value={query}
           onChange={e => setQuery(e.target.value)}
         />

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter, Merriweather } from 'next/font/google'
 import './globals.css'
 import Providers from '@/components/providers'
 import Header from '@/components/header'
@@ -11,9 +11,15 @@ const inter = Inter({
   subsets: ['latin']
 })
 
-const playfair = Playfair_Display({
+// const playfair = Playfair_Display({
+//   subsets: ['latin'],
+//   variable: '--font-serif'
+// })
+
+const merriweather = Merriweather({
+  variable: '--font-serif',
   subsets: ['latin'],
-  variable: '--font-serif'
+  weight: ['400', '700']
 })
 
 export const metadata: Metadata = {
@@ -31,13 +37,18 @@ export default function RootLayout({
       <body
         className={cn(
           inter.variable,
-          playfair.variable,
-          'flex min-h-screen flex-col font-sans antialiased'
+          merriweather.variable,
+          'relative flex min-h-screen flex-col font-sans antialiased'
         )}
       >
+        {/* <div className='bg-radial-light dark:bg-radial-dark absolute inset-0 -z-10 h-full w-full' /> */}
+        <div className='bg-image'></div>
+
         <Providers>
           <Header />
-          <main className='grow'>{children}</main>
+          <main className='container mx-auto mt-48 flex-1 px-4 lg:px-8'>
+            {children}
+          </main>
           <Footer />
         </Providers>
       </body>

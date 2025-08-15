@@ -1,5 +1,4 @@
 import { ProjectMetadata } from '@/lib/projects'
-import { formatDate } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -12,27 +11,41 @@ export default function Projects({
   return (
     <ul className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
       {projects.map(project => (
-        <li key={project.slug} className='group relative'>
+        <li
+          key={project.slug}
+          className='card-shadow group relative rounded-lg'
+        >
           <Link href={`/projects/${project.slug}.mdx`}>
-            <div className='h-72 w-full overflow-hidden rounded-lg bg-muted sm:h-60'>
+            <div className='relative aspect-[16/9] w-full overflow-hidden rounded-lg bg-muted'>
               <Image
                 src={project?.image || ''}
                 alt={project.title || ''}
                 fill
-                className='hover: rounded-lg object-cover object-center shadow-lg transition-transform duration-300 ease-in-out'
+                sizes='(max-width: 640px) 100vw, 
+           (max-width: 1024px) 50vw, 
+           33vw'
+                className='hover: rounded-lg object-cover object-center transition-transform duration-300 ease-in-out'
               />
             </div>
 
-            <div className='absolute inset-[4px] rounded-lg bg-background/70 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-70'>
-              <div className='absolute inset-x-0 bottom-0 translate-y-2 px-6 py-4'>
-                <h2 className='title line-clamp-1 text-xl no-underline'>
+            <div
+              className='absolute inset-[4px] rounded-lg opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100'
+              style={{
+                backgroundColor: project.color
+              }}
+            >
+              <div className='absolute inset-0 flex flex-col justify-center p-6'>
+                <h2
+                  className={`title line-clamp-1 text-xl no-underline`}
+                  style={{ color: project.textColor }}
+                >
                   {project.title}
                 </h2>
-                <p className='line-clamp-1 text-sm text-muted-foreground'>
+                <p
+                  className='line-clamp-3 text-sm text-foreground'
+                  style={{ color: project.textColor }}
+                >
                   {project.summary}
-                </p>
-                <p className='text-xs font-light text-muted-foreground'>
-                  {formatDate(project.publishedAt ?? '')}
                 </p>
               </div>
             </div>

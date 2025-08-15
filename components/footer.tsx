@@ -44,7 +44,7 @@ export default function Footer() {
                 href={item.href}
                 target='_blank'
                 rel='noreferrer noopener'
-                className='text-muted-foreground hover:text-foreground'
+                className='text-foreground hover:text-muted-foreground'
               >
                 <span className='sr-only'>{item.name}</span>
                 <item.icon aria-hidden='true' className='h-5 w-5' />
@@ -53,8 +53,7 @@ export default function Footer() {
           </div>
           <div className='mt-8 md:order-1 md:mt-0'>
             <p className='text-center text-xs leading-5 text-muted-foreground'>
-              &copy; {new Date().getFullYear()} Company name. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} HerDevLab. All rights reserved.
             </p>
           </div>
         </div>
