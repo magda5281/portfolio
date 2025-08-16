@@ -56,8 +56,8 @@ export default async function Post({
             {author}/ {formatDate(publishedAt ?? '')}
           </p>
         </header>
-        <article className='prose mt-16 dark:prose-invert'>
-          <MDXContent source={content} />
+        <article className='prose mt-16 space-y-8 dark:prose-invert'>
+          <MDXContent source={content} className={''} />
         </article>
       </div>
     </section>

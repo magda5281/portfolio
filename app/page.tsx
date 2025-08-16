@@ -5,7 +5,7 @@ import RecentProjects from '@/components/recent-projects'
 
 export default function Home() {
   return (
-    <section className='container max-w-5xl space-y-16'>
+    <section className='container max-w-5xl space-y-16 p-4'>
       <Intro />
       <RecentProjects />
       <RecentPosts />

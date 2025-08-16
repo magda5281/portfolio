@@ -9,8 +9,11 @@ export default async function RecentProjects() {
     <section className='card-shadow secondary-bg p-8'>
       <h2 className='title mb-12'>Recent projects</h2>
       <Projects projects={projects} />
-      <Link href='/projects' className='mt-8 inline-flex items-center'>
-        <span className='links-color'>All projects</span>
+      <Link
+        href='/projects'
+        className='mt-8 inline-flex items-center text-accent-foreground hover:text-secondary-foreground'
+      >
+        <span>All projects</span>
       </Link>
     </section>
   )

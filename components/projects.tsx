@@ -36,13 +36,13 @@ export default function Projects({
             >
               <div className='absolute inset-0 flex flex-col justify-center p-6'>
                 <h2
-                  className={`title line-clamp-1 text-xl no-underline`}
+                  className={`title line-clamp-1 text-xl text-card-foreground no-underline`}
                   style={{ color: project.textColor }}
                 >
                   {project.title}
                 </h2>
                 <p
-                  className='line-clamp-3 text-sm text-foreground'
+                  className='line-clamp-3 text-sm text-card-foreground'
                   style={{ color: project.textColor }}
                 >
                   {project.summary}

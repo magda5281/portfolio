@@ -46,7 +46,7 @@ export default function RootLayout({
 
         <Providers>
           <Header />
-          <main className='container mx-auto mt-48 flex-1 px-4 lg:px-8'>
+          <main className='container mx-auto mt-28 flex-1 px-4 md:mt-48 lg:px-8'>
             {children}
           </main>
           <Footer />
