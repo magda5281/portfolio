@@ -10,6 +10,7 @@ import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { sendEmail } from '@/lib/actions'
+import { Label } from './ui/label'
 
 type Inputs = z.infer<typeof ContactFormSchema>
 export default function ContactForm(): React.JSX.Element {
@@ -72,6 +73,9 @@ export default function ContactForm(): React.JSX.Element {
           <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
             {/* Name */}
             <div>
+              <Label htmlFor='name' className='sr-only'>
+                Name
+              </Label>
               <Input
                 id='name'
                 type='text'
@@ -79,6 +83,8 @@ export default function ContactForm(): React.JSX.Element {
                 autoComplete='given-name'
                 {...register('name')}
                 className='shadow-lg'
+                aria-invalid={!!errors.name}
+                aria-describedby={errors.name ? 'name-error' : undefined}
               />
               {errors.name?.message && (
                 <p className='ml-1 mt-2 text-sm text-rose-400'>
@@ -88,6 +94,9 @@ export default function ContactForm(): React.JSX.Element {
             </div>
             {/* email */}
             <div>
+              <Label htmlFor='email' className='sr-only'>
+                Name
+              </Label>
               <Input
                 id='email'
                 type='text'
@@ -95,6 +104,8 @@ export default function ContactForm(): React.JSX.Element {
                 autoComplete='email'
                 {...register('email')}
                 className='shadow-lg'
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? 'email-error' : undefined}
               />
               {errors.email?.message && (
                 <p className='ml-1 mt-2 text-sm text-rose-400'>
@@ -104,11 +115,17 @@ export default function ContactForm(): React.JSX.Element {
             </div>
             {/* message */}
             <div className='sm:col-span-2'>
+              <Label htmlFor='message' className='sr-only'>
+                Message
+              </Label>
               <Textarea
+                id='message'
                 rows={4}
                 placeholder='Message'
                 {...register('message')}
                 className='shadow-lg'
+                aria-invalid={!!errors.message}
+                aria-describedby={errors.message ? 'message-error' : undefined}
               />
 
               {errors.message?.message && (

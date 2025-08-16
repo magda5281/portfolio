@@ -8,6 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { NewsletterFormSchema } from '@/lib/schemas'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
+import { Label } from './ui/label'
 
 import { subscribe } from '@/lib/actions'
 import { Card, CardContent } from '@/components/ui/card'
@@ -51,16 +52,25 @@ export default function NewsletterForm() {
             className='flex flex-col items-start gap-3'
           >
             <div className='w-full'>
+              <Label htmlFor='email' className='sr-only'>
+                Email
+              </Label>
               <Input
                 type='email'
                 id='email'
                 autoComplete='email'
                 placeholder='Email'
-                className='w-full'
+                className='w-full shadow-lg'
                 {...register('email')}
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? 'email-error' : undefined}
               />
               {errors.email?.message && (
-                <p className='ml-1 mt-2 text-sm text-rose-400'>
+                <p
+                  id='message-error'
+                  role='alert'
+                  className='ml-1 mt-2 text-sm text-rose-400'
+                >
                   {errors.email.message}
                 </p>
               )}
@@ -71,7 +81,7 @@ export default function NewsletterForm() {
                 disabled={isSubmitting}
                 className='w-full disabled:opacity-50'
               >
-                {isSubmitting ? 'Submitting...' : 'Subscribed'}
+                {isSubmitting ? 'Submitting...' : 'Subscribe'}
               </Button>
             </div>
             <p className='mt-4 text-xs text-muted-foreground'>
