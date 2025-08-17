@@ -92,7 +92,7 @@ body {
       /* Teal accent */
         radial-gradient(
           circle at 80% 70%,
-          rgb(101, 75, 169) 0%,
+          hsl(257, 39%, 48%) 0%,
           transparent 50%
         ),
       /* Purple accent */
@@ -109,7 +109,7 @@ body {
     --secondary-foreground: 177.7 95.1% 31.8%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 178.2 22% 78%;
-    --accent: 240 3.7% 15.9%;
+    --accent: 257, 39%, 40%;
     --accent-foreground: 177.8 95% 39.4%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -121,9 +121,16 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-
-    /* --tw-shadow-color: hsl(173 58% 39% / 0.4); */
     --tw-shadow-color: hsl(0 0% 100% / 0.4);
+    --sh-class: #2d5e9d;
+    --sh-identifier: #9a9ea3;
+    --sh-sign: #8996a3;
+    --sh-property: #0550ae;
+    --sh-entity: #249a97;
+    --sh-jsxliterals: #6266d1;
+    --sh-string: #00a99a;
+    --sh-keyword: #f47067;
+    --sh-comment: #a19595;
   }
 }
 
@@ -165,7 +172,7 @@ body {
   }
 
   .prose pre {
-    @apply overflow-x-auto rounded-lg bg-accent px-5 py-4 text-sm;
+    @apply overflow-x-auto rounded-lg bg-accent px-5 py-4 text-sm shadow-lg;
   }
   /* .prose h1 h2 {
     @apply text-foreground;
