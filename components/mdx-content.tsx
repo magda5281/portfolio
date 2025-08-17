@@ -3,6 +3,7 @@ import { highlight } from 'sugar-high'
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc'
 import { cn } from '@/lib/utils'
 import Counter from '@/components/counter'
+import { GitHubLogoIcon } from '@radix-ui/react-icons'
 
 interface CodeProps extends React.HTMLProps<HTMLPreElement> {
   children: string
@@ -31,7 +32,8 @@ function Section({
 const components = {
   code: Code,
   Section,
-  Counter
+  Counter,
+  GitHubLogoIcon
 }
 
 export default function MDXContent(
